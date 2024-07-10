@@ -17,3 +17,6 @@ app.use('./auth', authRoutes);
 
 const profileRoutes = require('./profile');
 app.use('/profile', profileRoutes);
+
+const postRouts = require('./posts');
+app.use('/posts', postRouts);
