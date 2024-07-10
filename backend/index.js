@@ -26,3 +26,6 @@ app.use('/follows', followRoutes);
 
 const interactionRoutes = require('./interaction');
 app.use('/interaction', interactionRoutes);
+
+const feedRoutes = require('./feed');
+app.use('/feed', feedRoutes);
