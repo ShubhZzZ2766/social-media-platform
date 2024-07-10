@@ -29,3 +29,6 @@ app.use('/interaction', interactionRoutes);
 
 const feedRoutes = require('./feed');
 app.use('/feed', feedRoutes);
+
+const notificationRoutes = require('./notifications');
+app.use('/notifications', notificationRoutes);
