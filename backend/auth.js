@@ -15,10 +15,10 @@ router.post('./register', async (req, res) => {
 
 router.post('/login', (req, res) => {
     const { username, password } = req.body;
-    db.query('SELECT * FROM users WHERE username = ?', [username], async  (err, result) => { 
+    db.query('SELECT * FROM users WHERE username = ?', [username], async  (err, results) => { 
         if(err) return res.status(500).send(err);
-        if(result.length === 0) return res.status(400).send('User Not Found');
-        const user = result[0];
+        if(results.length === 0) return res.status(400).send('User Not Found');
+        const user = results[0];
         const isValid = await bcrypter.compare(password, user.password);
         if(!isValid) return res.status(400).send('Invalid Password');
         const token = jwt.sign({id: user.id}, 'secret', {expiresIn: '1h'});

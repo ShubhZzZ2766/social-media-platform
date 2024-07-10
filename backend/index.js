@@ -23,3 +23,6 @@ app.use('/posts', postRouts);
 
 const followRoutes = require('./follows');
 app.use('/follows', followRoutes);
+
+const interactionRoutes = require('./interaction');
+app.use('/interaction', interactionRoutes);
