@@ -20,3 +20,6 @@ app.use('/profile', profileRoutes);
 
 const postRouts = require('./posts');
 app.use('/posts', postRouts);
+
+const followRoutes = require('./follows');
+app.use('/follows', followRoutes);
