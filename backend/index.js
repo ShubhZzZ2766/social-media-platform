@@ -11,3 +11,9 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
+const authRoutes = require("./auth");
+app.use('./auth', authRoutes);
+
+const profileRoutes = require('./profile');
+app.use('/profile', profileRoutes);
